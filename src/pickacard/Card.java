@@ -29,6 +29,20 @@ public class Card {
     public void setSuit(String suit) {
         this.suit = suit;
     }
+    public String randomSuit(){
+        int n;// stores the random number
+        do{
+           n=(int)(Math.random()*100);
+        }while(n>3||n<0);
+        return SUITS[n];
+    }
+    public int randomNumber(){
+        int n;// stores the random number
+        do{
+           n=(int)(Math.random()*100);
+        }while(n>13||n<1);
+        return n;
+    }
 
     /**
      * @return the value
@@ -42,6 +56,11 @@ public class Card {
      */
     public void setValue(int value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" + "suit=" + suit + ", value=" + value + '}';
     }
    
    
